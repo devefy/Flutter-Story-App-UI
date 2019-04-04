@@ -1,4 +1,4 @@
-# flutter_story_app_concept
+# Flutter Story App UI
 
 A new Flutter project.
 
