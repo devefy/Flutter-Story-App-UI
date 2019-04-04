@@ -1,6 +1,6 @@
 # Flutter Story App UI
 
-A new Flutter project.
+![](assets/preview.png)
 
 ## Getting Started
 
