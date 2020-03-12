@@ -71,7 +71,7 @@ flutter:
 
     - family: Calibre-Semibold
       fonts:
-        - asset: assets/Calibre Semibold.otf
+        - asset: assets/Calibre_Semibold.otf
 
     - family: CustomIcons
       fonts:
