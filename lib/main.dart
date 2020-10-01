@@ -1,12 +1,15 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'customIcons.dart';
 import 'data.dart';
 import 'dart:math';
 
-void main() => runApp(MaterialApp(
-      home: MyApp(),
-      debugShowCheckedModeBanner: false,
-    ));
+void main() {
+  runApp(CupertinoApp(
+    home: MyApp(),
+    debugShowCheckedModeBanner: false,
+  ));
+}
 
 class MyApp extends StatefulWidget {
   @override
@@ -29,15 +32,7 @@ class _MyAppState extends State<MyApp> {
     });
 
     return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: [
-            Color(0xFF1b1e44),
-            Color(0xFF2d3447),
-          ],
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
-              tileMode: TileMode.clamp)),
+      decoration: BoxDecoration(color: CupertinoColors.activeBlue),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
@@ -52,7 +47,7 @@ class _MyAppState extends State<MyApp> {
                     IconButton(
                       icon: Icon(
                         CustomIcons.menu,
-                        color: Colors.white,
+                        color: CupertinoColors.white,
                         size: 30.0,
                       ),
                       onPressed: () {},
@@ -60,7 +55,7 @@ class _MyAppState extends State<MyApp> {
                     IconButton(
                       icon: Icon(
                         Icons.search,
-                        color: Colors.white,
+                        color: CupertinoColors.white,
                         size: 30.0,
                       ),
                       onPressed: () {},
@@ -75,7 +70,7 @@ class _MyAppState extends State<MyApp> {
                   children: <Widget>[
                     Text("Trending",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: CupertinoColors.white,
                           fontSize: 46.0,
                           fontFamily: "Calibre-Semibold",
                           letterSpacing: 1.0,
@@ -84,7 +79,7 @@ class _MyAppState extends State<MyApp> {
                       icon: Icon(
                         CustomIcons.option,
                         size: 12.0,
-                        color: Colors.white,
+                        color: CupertinoColors.white,
                       ),
                       onPressed: () {},
                     )
@@ -105,7 +100,7 @@ class _MyAppState extends State<MyApp> {
                           padding: EdgeInsets.symmetric(
                               horizontal: 22.0, vertical: 6.0),
                           child: Text("Animated",
-                              style: TextStyle(color: Colors.white)),
+                              style: TextStyle(color: CupertinoColors.white)),
                         ),
                       ),
                     ),
@@ -113,7 +108,7 @@ class _MyAppState extends State<MyApp> {
                       width: 15.0,
                     ),
                     Text("25+ Stories",
-                        style: TextStyle(color: Colors.blueAccent))
+                        style: TextStyle(color: CupertinoColors.systemBlue))
                   ],
                 ),
               ),
@@ -139,7 +134,7 @@ class _MyAppState extends State<MyApp> {
                   children: <Widget>[
                     Text("Favourite",
                         style: TextStyle(
-                          color: Colors.white,
+                          color: CupertinoColors.white,
                           fontSize: 46.0,
                           fontFamily: "Calibre-Semibold",
                           letterSpacing: 1.0,
@@ -148,7 +143,7 @@ class _MyAppState extends State<MyApp> {
                       icon: Icon(
                         CustomIcons.option,
                         size: 12.0,
-                        color: Colors.white,
+                        color: CupertinoColors.white,
                       ),
                       onPressed: () {},
                     )
@@ -161,7 +156,7 @@ class _MyAppState extends State<MyApp> {
                   children: <Widget>[
                     Container(
                       decoration: BoxDecoration(
-                        color: Colors.blueAccent,
+                        color: CupertinoColors.systemBlue,
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: Center(
@@ -169,7 +164,7 @@ class _MyAppState extends State<MyApp> {
                           padding: EdgeInsets.symmetric(
                               horizontal: 22.0, vertical: 6.0),
                           child: Text("Latest",
-                              style: TextStyle(color: Colors.white)),
+                              style: TextStyle(color: CupertinoColors.white)),
                         ),
                       ),
                     ),
@@ -177,7 +172,7 @@ class _MyAppState extends State<MyApp> {
                       width: 15.0,
                     ),
                     Text("9+ Stories",
-                        style: TextStyle(color: Colors.blueAccent))
+                        style: TextStyle(color: CupertinoColors.systemBlue))
                   ],
                 ),
               ),
@@ -248,12 +243,14 @@ class CardScrollWidget extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16.0),
               child: Container(
-                decoration: BoxDecoration(color: Colors.white, boxShadow: [
-                  BoxShadow(
-                      color: Colors.black12,
-                      offset: Offset(3.0, 6.0),
-                      blurRadius: 10.0)
-                ]),
+                decoration: BoxDecoration(
+                    color: CupertinoColors.white,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.black12,
+                          offset: Offset(3.0, 6.0),
+                          blurRadius: 10.0)
+                    ]),
                 child: AspectRatio(
                   aspectRatio: cardAspectRatio,
                   child: Stack(
@@ -271,7 +268,7 @@ class CardScrollWidget extends StatelessWidget {
                                   horizontal: 16.0, vertical: 8.0),
                               child: Text(title[i],
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: CupertinoColors.white,
                                       fontSize: 25.0,
                                       fontFamily: "SF-Pro-Text-Regular")),
                             ),
@@ -285,10 +282,11 @@ class CardScrollWidget extends StatelessWidget {
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 22.0, vertical: 6.0),
                                 decoration: BoxDecoration(
-                                    color: Colors.blueAccent,
+                                    color: CupertinoColors.systemBlue,
                                     borderRadius: BorderRadius.circular(20.0)),
                                 child: Text("Read Later",
-                                    style: TextStyle(color: Colors.white)),
+                                    style: TextStyle(
+                                        color: CupertinoColors.white)),
                               ),
                             )
                           ],
